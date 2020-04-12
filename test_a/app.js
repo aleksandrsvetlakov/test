@@ -1,21 +1,21 @@
-'use strict'
+'use strict';
 
 class Header {
   constructor(element) {
-    this.el = element
+    this.el = element;
     
-    this.el.addEventListener('focusout', this.setHeader)
+    this.el.addEventListener('focusout', this.setHeader);
   }
 
   render() {
-    this.el.innerHTML = this.createElement()
+    this.el.innerHTML = this.createElement();
   }
 
   setHeader(e) {
     if (e.target.hasAttribute('data-input') && e.target.value !== '') {
-      const h1 = this.querySelector('.title')
+      const h1 = this.querySelector('.title');
 
-      h1.textContent = e.target.value
+      h1.textContent = e.target.value;
     }
   }
 
@@ -25,11 +25,11 @@ class Header {
       <form action="#">
         <input type="text" data-input>
       </form>
-    `
+    `;
   }
 }
 
-const element = document.querySelector('.container')
-const header = new Header(element)
+const element = document.querySelector('.container');
+const header = new Header(element);
 
-header.render()
+header.render();
